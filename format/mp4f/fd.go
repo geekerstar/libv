@@ -1,6 +1,6 @@
 package mp4f
 
-import "libv/format/mp4/mp4io"
+import "github.com/geekerstar/libv/format/mp4/mp4io"
 
 type FDummy struct {
 	Data []byte

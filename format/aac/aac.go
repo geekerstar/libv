@@ -6,9 +6,9 @@ import (
 	"io"
 	"time"
 
-	"libv/av"
-	"libv/av/avutil"
-	"libv/codec/aacparser"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/avutil"
+	"github.com/geekerstar/libv/codec/aacparser"
 )
 
 type Muxer struct {

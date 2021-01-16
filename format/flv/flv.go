@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"io"
 
-	"libv/av"
-	"libv/av/avutil"
-	"libv/codec"
-	"libv/codec/aacparser"
-	"libv/codec/fake"
-	"libv/codec/h264parser"
-	"libv/format/flv/flvio"
-	"libv/utils/bits/pio"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/avutil"
+	"github.com/geekerstar/libv/codec"
+	"github.com/geekerstar/libv/codec/aacparser"
+	"github.com/geekerstar/libv/codec/fake"
+	"github.com/geekerstar/libv/codec/h264parser"
+	"github.com/geekerstar/libv/format/flv/flvio"
+	"github.com/geekerstar/libv/utils/bits/pio"
 )
 
 var MaxProbePacketCount = 20

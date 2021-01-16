@@ -17,11 +17,11 @@ import (
 	"strings"
 	"time"
 
-	"libv/av"
-	"libv/codec"
-	"libv/codec/aacparser"
-	"libv/codec/h264parser"
-	"libv/format/rtsp/sdp"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/codec"
+	"github.com/geekerstar/libv/codec/aacparser"
+	"github.com/geekerstar/libv/codec/h264parser"
+	"github.com/geekerstar/libv/format/rtsp/sdp"
 )
 
 const (
@@ -541,7 +541,7 @@ func (client *RTSPClient) RTPDemuxer(payloadRAW *[]byte) ([]*av.Packet, bool) {
 			case naluType == 8:
 				client.CodecUpdatePPS(nal)
 			case naluType == 24:
-				client.Println("24 Type need add next version report https://libv")
+				client.Println("24 Type need add next version report https://github.com/geekerstar/libv")
 			case naluType == 28:
 				fuIndicator := content[offset]
 				fuHeader := content[offset+1]

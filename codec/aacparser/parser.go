@@ -6,8 +6,8 @@ import (
 	"io"
 	"time"
 
-	"libv/av"
-	"libv/utils/bits"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/utils/bits"
 )
 
 // copied from libavcodec/mpeg4audio.h

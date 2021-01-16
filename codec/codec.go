@@ -3,8 +3,8 @@ package codec
 import (
 	"time"
 
-	"libv/av"
-	"libv/codec/fake"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/codec/fake"
 )
 
 type OpusCodecData struct {

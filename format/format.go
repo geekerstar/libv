@@ -1,13 +1,13 @@
 package format
 
 import (
-	"libv/av/avutil"
-	"libv/format/aac"
-	"libv/format/flv"
-	"libv/format/mp4"
-	"libv/format/rtmp"
-	"libv/format/rtsp"
-	"libv/format/ts"
+	"github.com/geekerstar/libv/av/avutil"
+	"github.com/geekerstar/libv/format/aac"
+	"github.com/geekerstar/libv/format/flv"
+	"github.com/geekerstar/libv/format/mp4"
+	"github.com/geekerstar/libv/format/rtmp"
+	"github.com/geekerstar/libv/format/rtsp"
+	"github.com/geekerstar/libv/format/ts"
 )
 
 func RegisterAll() {

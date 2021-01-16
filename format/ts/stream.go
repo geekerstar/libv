@@ -3,8 +3,8 @@ package ts
 import (
 	"time"
 
-	"libv/av"
-	"libv/format/ts/tsio"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/format/ts/tsio"
 )
 
 type Stream struct {

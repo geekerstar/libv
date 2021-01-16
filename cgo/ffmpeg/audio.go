@@ -17,9 +17,9 @@ import (
 	"time"
 	"unsafe"
 
-	"libv/av"
-	"libv/av/avutil"
-	"libv/codec/aacparser"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/avutil"
+	"github.com/geekerstar/libv/codec/aacparser"
 )
 
 const debug = false

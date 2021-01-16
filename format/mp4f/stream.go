@@ -3,10 +3,10 @@ package mp4f
 import (
 	"time"
 
-	"libv/av"
-	"libv/format/mp4"
-	"libv/format/mp4/mp4io"
-	"libv/format/mp4f/mp4fio"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/format/mp4"
+	"github.com/geekerstar/libv/format/mp4/mp4io"
+	"github.com/geekerstar/libv/format/mp4f/mp4fio"
 )
 
 type Stream struct {

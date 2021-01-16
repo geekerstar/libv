@@ -15,8 +15,8 @@ import (
 	"runtime"
 	"unsafe"
 
-	"libv/av"
-	"libv/codec/h264parser"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/codec/h264parser"
 )
 
 type VideoDecoder struct {

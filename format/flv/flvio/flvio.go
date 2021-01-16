@@ -5,8 +5,8 @@ import (
 	"io"
 	"time"
 
-	"libv/av"
-	"libv/utils/bits/pio"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/utils/bits/pio"
 )
 
 func TsToTime(ts int32) time.Duration {

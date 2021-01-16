@@ -2,7 +2,7 @@ package tsio
 
 import (
 	"fmt"
-	"libv/utils/bits/pio"
+	"github.com/geekerstar/libv/utils/bits/pio"
 	"io"
 	"time"
 )
@@ -513,6 +513,7 @@ func NewTSWriter(pid uint16) *TSWriter {
 	}
 	return w
 }
+
 //TSHeader func
 type TSHeader struct {
 	PID                    uint
@@ -524,6 +525,7 @@ type TSHeader struct {
 	RandomAccessIndicator  bool
 	HeaderLength           uint
 }
+
 //WriteTSHeader func
 func WriteTSHeader(w io.Writer, element TSHeader, dataLength int) (written int, err error) {
 	var flags, extFlags uint
@@ -616,10 +618,10 @@ func (self *TSWriter) WritePackets(w io.Writer, datav [][]byte, pcr time.Duratio
 		hdrlen := 6
 		//pid := uint16((self.tshdr[1]&0x1f))<<8 | uint16(self.tshdr[2])
 		//if pid != 256 {
-			//self.tshdr[3] = 0x01
+		//self.tshdr[3] = 0x01
 
-			//self.tshdr[3] = 0x47
-			//self.tshdr[4]
+		//self.tshdr[3] = 0x47
+		//self.tshdr[4]
 		//	log.Println(self.tshdr[:5])
 		//	log.Println("pid", pid,self.tshdr[3] )
 		//}
@@ -716,6 +718,7 @@ func WriteUInt64(w io.Writer, val uint64, n int) (err error) {
 func WriteUInt(w io.Writer, val uint, n int) (err error) {
 	return WriteUInt64(w, uint64(val), n)
 }
+
 //PCRToUInt func
 func PCRToUInt(pcr uint64) uint64 {
 	base := pcr / 300

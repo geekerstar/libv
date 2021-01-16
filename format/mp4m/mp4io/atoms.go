@@ -3,7 +3,7 @@ package mp4io
 import (
 	"time"
 
-	"libv/utils/bits/pio"
+	"github.com/geekerstar/libv/utils/bits/pio"
 )
 
 const MOOF = Tag(0x6d6f6f66)

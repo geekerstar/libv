@@ -17,13 +17,13 @@ import (
 	"strings"
 	"time"
 
-	"libv/av"
-	"libv/av/avutil"
-	"libv/codec"
-	"libv/codec/aacparser"
-	"libv/codec/h264parser"
-	"libv/format/rtsp/sdp"
-	"libv/utils/bits/pio"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/avutil"
+	"github.com/geekerstar/libv/codec"
+	"github.com/geekerstar/libv/codec/aacparser"
+	"github.com/geekerstar/libv/codec/h264parser"
+	"github.com/geekerstar/libv/format/rtsp/sdp"
+	"github.com/geekerstar/libv/utils/bits/pio"
 )
 
 var ErrCodecDataChange = fmt.Errorf("rtsp: codec data change, please call HandleCodecDataChange()")

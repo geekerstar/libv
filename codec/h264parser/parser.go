@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"fmt"
 
-	"libv/av"
-	"libv/utils/bits"
-	"libv/utils/bits/pio"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/utils/bits"
+	"github.com/geekerstar/libv/utils/bits/pio"
 )
 
 const (

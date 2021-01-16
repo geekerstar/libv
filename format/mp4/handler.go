@@ -3,8 +3,8 @@ package mp4
 import (
 	"io"
 
-	"libv/av"
-	"libv/av/avutil"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/avutil"
 )
 
 var CodecTypes = []av.CodecType{av.H264, av.AAC}

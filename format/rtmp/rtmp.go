@@ -14,11 +14,11 @@ import (
 	"strings"
 	"time"
 
-	"libv/av"
-	"libv/av/avutil"
-	"libv/format/flv"
-	"libv/format/flv/flvio"
-	"libv/utils/bits/pio"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/avutil"
+	"github.com/geekerstar/libv/format/flv"
+	"github.com/geekerstar/libv/format/flv/flvio"
+	"github.com/geekerstar/libv/utils/bits/pio"
 )
 
 var Debug bool

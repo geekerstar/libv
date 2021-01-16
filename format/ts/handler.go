@@ -3,8 +3,8 @@ package ts
 import (
 	"io"
 
-	"libv/av"
-	"libv/av/avutil"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/avutil"
 )
 
 func Handler(h *avutil.RegisterHandler) {

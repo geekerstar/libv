@@ -4,7 +4,7 @@ package pktque
 import (
 	"time"
 
-	"libv/av"
+	"github.com/geekerstar/libv/av"
 )
 
 type Filter interface {

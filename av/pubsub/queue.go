@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"libv/av"
-	"libv/av/pktque"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/pktque"
 )
 
 //        time

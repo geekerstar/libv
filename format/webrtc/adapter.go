@@ -10,8 +10,8 @@ import (
 
 	"github.com/pion/webrtc/v2"
 
-	"libv/av"
-	"libv/codec/h264parser"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/codec/h264parser"
 	"github.com/pion/webrtc/v2/pkg/media"
 )
 

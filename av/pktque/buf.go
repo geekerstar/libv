@@ -1,7 +1,7 @@
 package pktque
 
 import (
-	"libv/av"
+	"github.com/geekerstar/libv/av"
 )
 
 type Buf struct {

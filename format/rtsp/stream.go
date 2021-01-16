@@ -3,8 +3,8 @@ package rtsp
 import (
 	"time"
 
-	"libv/av"
-	"libv/format/rtsp/sdp"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/format/rtsp/sdp"
 )
 
 type Stream struct {

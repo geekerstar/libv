@@ -5,10 +5,10 @@ import (
 	"io"
 	"time"
 
-	"libv/av"
-	"libv/av/avutil"
-	"libv/av/pktque"
-	"libv/av/transcode"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/avutil"
+	"github.com/geekerstar/libv/av/pktque"
+	"github.com/geekerstar/libv/av/transcode"
 )
 
 var Debug bool

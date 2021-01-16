@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"libv/av"
-	"libv/av/pktque"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/av/pktque"
 )
 
 var Debug bool

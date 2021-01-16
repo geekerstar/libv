@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"libv/av"
+	"github.com/geekerstar/libv/av"
 )
 
 type Session struct {

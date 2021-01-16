@@ -6,10 +6,10 @@ import (
 	"io"
 	"time"
 
-	"libv/av"
-	"libv/codec/aacparser"
-	"libv/codec/h264parser"
-	"libv/format/mp4/mp4io"
+	"github.com/geekerstar/libv/av"
+	"github.com/geekerstar/libv/codec/aacparser"
+	"github.com/geekerstar/libv/codec/h264parser"
+	"github.com/geekerstar/libv/format/mp4/mp4io"
 )
 
 type Demuxer struct {

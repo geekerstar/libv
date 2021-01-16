@@ -1,7 +1,7 @@
 package fake
 
 import (
-	"libv/av"
+	"github.com/geekerstar/libv/av"
 )
 
 type CodecData struct {

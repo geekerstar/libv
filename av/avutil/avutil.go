@@ -9,7 +9,7 @@ import (
 	"path"
 	"strings"
 
-	"libv/av"
+	"github.com/geekerstar/libv/av"
 )
 
 type HandlerDemuxer struct {

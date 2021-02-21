@@ -195,6 +195,9 @@ func (element *Muxer) WritePacket(pkt av.Packet) (err error) {
 	}
 	if tmp, ok := element.streams[pkt.Idx]; ok {
 		element.StreamACK.Reset(10 * time.Second)
+		if len(pkt.Data) < 5 {
+			return nil
+		}
 		switch tmp.codec.Type() {
 		case av.H264:
 			codec := tmp.codec.(h264parser.CodecData)
@@ -205,7 +208,7 @@ func (element *Muxer) WritePacket(pkt av.Packet) (err error) {
 			}
 		case av.PCM_ALAW:
 		case av.OPUS:
-		case av.PCM_ALAW:
+		case av.PCM_MULAW:
 		case av.AAC:
 			//TODO: NEED ADD DECODER AND ENCODER
 			return ErrorCodecNotSupported

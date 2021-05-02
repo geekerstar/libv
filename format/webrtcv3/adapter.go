@@ -37,20 +37,32 @@ type Stream struct {
 	track *webrtc.TrackLocalStaticSample
 }
 type Options struct {
+	// ICEServers is a required array of ICE server URLs to connect to (e.g., STUN or TURN server URLs)
 	ICEServers []string
-	PortMin    uint16
-	PortMax    uint16
+	// ICEUsername is an optional username for authenticating with the given ICEServers
+	ICEUsername string
+	// ICECredential is an optional credential (i.e., password) for authenticating with the given ICEServers
+	ICECredential string
+	// PortMin is an optional minimum (inclusive) ephemeral UDP port range for the ICEServers connections
+	PortMin uint16
+	// PortMin is an optional maximum (inclusive) ephemeral UDP port range for the ICEServers connections
+	PortMax uint16
 }
 
 func NewMuxer(options Options) *Muxer {
 	tmp := Muxer{Options: options, ClientACK: time.NewTimer(time.Second * 20), StreamACK: time.NewTimer(time.Second * 20), streams: make(map[int8]*Stream)}
-	go tmp.WaitCloser()
+	//go tmp.WaitCloser()
 	return &tmp
 }
 func (element *Muxer) NewPeerConnection(configuration webrtc.Configuration) (*webrtc.PeerConnection, error) {
 	if len(element.Options.ICEServers) > 0 {
 		log.Println("Set ICEServers", element.Options.ICEServers)
-		configuration.ICEServers = append(configuration.ICEServers, webrtc.ICEServer{URLs: element.Options.ICEServers})
+		configuration.ICEServers = append(configuration.ICEServers, webrtc.ICEServer{
+			URLs:           element.Options.ICEServers,
+			Username:       element.Options.ICEUsername,
+			Credential:     element.Options.ICECredential,
+			CredentialType: webrtc.ICECredentialTypePassword,
+		})
 	}
 	m := &webrtc.MediaEngine{}
 	if err := m.RegisterDefaultCodecs(); err != nil {
@@ -185,7 +197,6 @@ func (element *Muxer) WritePacket(pkt av.Packet) (err error) {
 	if element.stop {
 		return ErrorClientOffline
 	}
-	//Wait client ICEConnectionStateConnected
 	if element.status == webrtc.ICEConnectionStateChecking {
 		WritePacketSuccess = true
 		return nil
@@ -228,24 +239,7 @@ func (element *Muxer) WritePacket(pkt av.Packet) (err error) {
 		return nil
 	}
 }
-func (element *Muxer) WaitCloser() {
-	waitT := time.NewTimer(time.Second * 10)
-	for {
-		select {
-		case <-waitT.C:
-			if element.stop {
-				return
-			}
-			waitT.Reset(time.Second * 10)
-		case <-element.StreamACK.C:
-			log.Println("Stream Not Send Video Close")
-			element.Close()
-		case <-element.ClientACK.C:
-			log.Println("Client Not Send ACK (probably the browser is minimized) or tab not active Close client")
-			element.Close()
-		}
-	}
-}
+
 func (element *Muxer) Close() error {
 	element.stop = true
 	if element.pc != nil {
